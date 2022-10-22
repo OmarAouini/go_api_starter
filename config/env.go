@@ -9,6 +9,7 @@ import (
 // AppConfiguration var to be accessed globally
 var AppConfiguration *Configuration
 
+// Main configuration app wrapper, contains all the env variables loaded during app startup
 type Configuration struct {
 	ApiSecret string `env:"API_SECRET,required"`
 	// TODO add new env vars here, refer to https://github.com/caarlos0/env
