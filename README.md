@@ -15,7 +15,7 @@ sh ./build_scripts/build.sh
 ```
 ### Run
 
-To build the docker container:
+To run the docker container:
 - Linux/Mac:
 ```sh
 ./build_scripts/run.sh
