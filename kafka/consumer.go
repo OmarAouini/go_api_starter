@@ -11,6 +11,8 @@ func ConsumeMessages(brokers []string, topic string) {
 	if err != nil {
 		panic(err)
 	}
+	logrus.Info("consuming partition soon...")
+
 	consumer, err := worker.ConsumePartition(topic, 0, sarama.OffsetOldest)
 }
 */
@@ -23,5 +25,6 @@ func connectConsumer(brokers []string) (sarama.Consumer, error) {
 		logrus.Error(err)
 		return nil, err
 	}
+	logrus.Info("consumer ready")
 	return conn, nil
 }
