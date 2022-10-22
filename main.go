@@ -1,7 +1,13 @@
 package main
 
-import "log"
+import (
+	"github.com/OmarAouini/go_tdd/config"
+	"github.com/OmarAouini/go_tdd/logging"
+	"github.com/sirupsen/logrus"
+)
 
 func main() {
-	log.Println("hello from main")
+	logging.ConfigureLogger()
+	config.LoadEnv()
+	logrus.Info("hello from main")
 }
