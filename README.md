@@ -3,7 +3,7 @@
  This project is intended to be used a base starting point to create rest api,
  the scripts included will result in a docker image/container exposing the 8080 port.
  <br><br>
- Some useful functions and libraries are included (log, env vars, etc...), i decided to not include any web framework/library, nor enforing any kind of folder structurer, the choise is yours.
+ Some useful functions and libraries are included (log, env vars, etc...), i decided to not include any web framework/library, nor enforcing any kind of folder structure, the choise is yours.
 
 ### Build
 
