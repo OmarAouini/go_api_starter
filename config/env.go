@@ -11,7 +11,7 @@ var AppConfiguration *Configuration
 
 type Configuration struct {
 	ApiSecret string `env:"API_SECRET,required"`
-	// TODO add new env vars here, refer to https://github.com/joho/godotenv
+	// TODO add new env vars here, refer to https://github.com/caarlos0/env
 }
 
 // Load all the environment variables and load it into the global config.AppConfiguration struct
