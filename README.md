@@ -1,5 +1,5 @@
 # Go Api Starter
- A base skeleton for go api
+ ## A base skeleton for go api<br><br>
  This project is intended to be used a base starting point to create rest api,
  the scripts included will result in a docker image/container exposing the 8080 port.
 
