@@ -7,7 +7,7 @@
 
 ### Build
 
-To build the project image, run the following command:
+To build the project image, from the root project folder, run the following command:
 
 - Linux/Mac:
 ```sh
