@@ -1,4 +1,4 @@
 CURRENT=`pwd`
 BASENAME=`basename "$CURRENT"`
-
-docker build -t "$BASENAME" .
+COMMIT_HASH=`git log -1 --format=%H`
+docker build -t "$BASENAME:$COMMIT_HASH" .
