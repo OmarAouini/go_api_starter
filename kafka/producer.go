@@ -2,15 +2,23 @@ package kafka
 
 import (
 	"encoding/json"
+	"time"
 
 	"github.com/Shopify/sarama"
+	"github.com/google/uuid"
 	"github.com/sirupsen/logrus"
 )
 
 // Send message to kafka brokers on the specified topic, the message must be Json serializable
 func SendMessage(brokers []string, topic string, message interface{}) error {
 
-	messageBytes, err := json.Marshal(message)
+	messageK := KafkaMessage{
+		UUID:      uuid.New(),
+		Timestamp: time.Now().UTC(),
+		Content:   message,
+	}
+
+	messageBytes, err := json.Marshal(messageK)
 	if err != nil {
 		logrus.Error(err)
 		return err
@@ -34,7 +42,7 @@ func SendMessage(brokers []string, topic string, message interface{}) error {
 		return err
 	}
 
-	logrus.Info("Message is stored in topic(%s)/partition(%d)/offset(%d)\n", topic, partition, offset)
+	logrus.Infof("Message is stored in topic(%s)/partition(%d)/offset(%v)\n", topic, partition, offset)
 
 	return nil
 }

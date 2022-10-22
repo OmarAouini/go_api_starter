@@ -31,6 +31,6 @@ require (
 
 require (
 	github.com/Shopify/sarama v1.37.2
-	github.com/stretchr/testify v1.8.0 // indirect
+	github.com/google/uuid v1.3.0
 	golang.org/x/sys v0.0.0-20220728004956-3c1f35247d10 // indirect
 )

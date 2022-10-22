@@ -2,12 +2,22 @@ package main
 
 import (
 	"github.com/OmarAouini/go_tdd/config"
+	"github.com/OmarAouini/go_tdd/kafka"
 	"github.com/OmarAouini/go_tdd/logging"
-	"github.com/sirupsen/logrus"
 )
+
+type Person struct {
+	ID   int    `json:"id"`
+	Nome string `json:"nome"`
+}
 
 func main() {
 	logging.ConfigureLogger()
 	config.LoadEnv()
-	logrus.Info("hello from main")
+
+	brokers := []string{"localhost:29092"}
+	kafka.SendMessage(brokers, "test_topic", Person{ID: 22, Nome: "test_name"})
+	kafka.ConsumeMessages(brokers, "test_topic", func(b []byte) {
+		//action here
+	})
 }
