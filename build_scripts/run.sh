@@ -1,4 +1,4 @@
 CURRENT=`pwd`
 BASENAME=`basename "$CURRENT"`
-
-docker run -it "$BASENAME" -p 8080:8080
+COMMIT_HASH=`git log -1 --format=%H`
+docker run -it "$BASENAME:$COMMIT_HASH" -p 8080:8080

@@ -11,6 +11,7 @@ var AppConfiguration *Configuration
 
 // Main configuration app wrapper, contains all the env variables loaded during app startup
 type Configuration struct {
+	AppName   string `env:"APP_NAME,required"`
 	ApiSecret string `env:"API_SECRET,required"`
 	// TODO add new env vars here, refer to https://github.com/caarlos0/env
 }
