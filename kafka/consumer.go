@@ -1,7 +1,6 @@
 package kafka
 
 import (
-	"fmt"
 	"os"
 	"os/signal"
 	"syscall"
@@ -33,20 +32,20 @@ func ConsumeMessages(brokers []string, topic string, callBackForMessage func([]b
 		for {
 			select {
 			case err := <-consumer.Errors():
-				fmt.Println(err)
+				logrus.Error(err)
 			case msg := <-consumer.Messages():
 				msgCount++
 				logrus.Infof("Received message Count %d: | Topic(%s) | Message(%s) \n", msgCount, string(msg.Topic), string(msg.Value))
 				callBackForMessage(msg.Value)
 			case <-sigchan:
-				fmt.Println("Interrupt is detected")
+				logrus.Info("Interrupt is detected")
 				doneCh <- struct{}{}
 			}
 		}
 	}()
 
 	<-doneCh
-	fmt.Println("Processed", msgCount, "messages")
+	logrus.Info("Processed", msgCount, "messages")
 
 	if err := worker.Close(); err != nil {
 		logrus.Fatal(err)
