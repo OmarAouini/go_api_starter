@@ -30,7 +30,7 @@ sh ./build_scripts/run.sh
 ```
 ### Test coverage report
 
-To get the test coverage report, running this command will generate a .out file in the root folder:
+To get the test coverage report to be consumed by tools such as CI/CD apps, running this command will generate a .out file in the root folder:
 - Linux/Mac:
 ```sh
 ./build_scripts/test.sh
