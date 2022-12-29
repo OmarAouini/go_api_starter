@@ -13,6 +13,7 @@ var AppConfiguration *Configuration
 type Configuration struct {
 	AppName   string `env:"APP_NAME,required"`
 	ApiSecret string `env:"API_SECRET,required"`
+	AppEnv    string `env:"APP_ENV,required"`
 	// TODO add new env vars here, refer to https://github.com/caarlos0/env
 }
 
