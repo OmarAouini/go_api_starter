@@ -14,5 +14,5 @@ func Init() {
 }
 
 func PrintAppInfo() {
-	fmt.Printf("-APP NAME: %s\n-APP ENV: %s\n", config.AppConfiguration.AppName, config.AppConfiguration.AppEnv)
+	fmt.Printf("-APP NAME: %s\n-APP ENV: %s\n-DB NAME: %s\n-DB_HOST: %s\n-DB_SCHEMA: %s\n-DB_TIMEZONE: %s", config.AppConfiguration.AppName, config.AppConfiguration.AppEnv, config.AppConfiguration.DbName, config.AppConfiguration.DbHost, config.AppConfiguration.DbSchema, config.AppConfiguration.DbTimezone)
 }

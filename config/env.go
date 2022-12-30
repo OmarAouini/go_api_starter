@@ -11,9 +11,20 @@ var AppConfiguration *Configuration
 
 // Main configuration app wrapper, contains all the env variables loaded during app startup
 type Configuration struct {
-	AppName   string `env:"APP_NAME,required"`
-	ApiSecret string `env:"API_SECRET,required"`
-	AppEnv    string `env:"APP_ENV,required"`
+	AppName    string `env:"APP_NAME,required"`
+	ApiSecret  string `env:"API_SECRET,required"`
+	AppEnv     string `env:"APP_ENV,required"`
+	DbName     string `env:"DB_NAME,required"`
+	DbSchema   string `env:"DB_SCHEMA,required"`
+	DbHost     string `env:"DB_HOST,required"`
+	DbPort     string `env:"DB_PORT,required"`
+	DbUsername string `env:"DB_USERNAME,required"`
+	DbPassword string `env:"DB_PASSWORD,required"`
+	DbSslMode  string `env:"DB_SSLMODE,required"`
+	DbTimezone string `env:"DB_TIMEZONE,required"`
+	DbMinConn  int    `env:"DB_MINCONN,required"`
+	DbMaxConn  int    `env:"DB_MAXCONN,required"`
+
 	// TODO add new env vars here, refer to https://github.com/caarlos0/env
 }
 
