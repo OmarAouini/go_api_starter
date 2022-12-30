@@ -1,4 +1,4 @@
-module github.com/OmarAouini/go_tdd
+module github.com/OmarAouini/golang_api_starter
 
 go 1.19
 
@@ -44,7 +44,8 @@ require (
 require (
 	github.com/Shopify/sarama v1.37.2
 	github.com/google/uuid v1.3.0
-	golang.org/x/sys v0.0.0-20220728004956-3c1f35247d10 // indirect
+	github.com/onrik/gorm-logrus v0.5.0
+	golang.org/x/sys v0.2.0 // indirect
 	gorm.io/driver/mysql v1.4.4
 	gorm.io/driver/postgres v1.4.5
 	gorm.io/gorm v1.24.2

@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
-	"github.com/OmarAouini/go_tdd/config"
-	"github.com/OmarAouini/go_tdd/logging"
+	"github.com/OmarAouini/golang_api_starter/config"
+	"github.com/OmarAouini/golang_api_starter/logging"
 )
 
 // misc configuration initialization such as logger, environment, etc...
