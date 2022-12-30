@@ -22,7 +22,7 @@ var DB *gorm.DB
 func ConnectDb() {
 
 	// for additional configuration and docs, refer to: https://gorm.io/docs/
-	fmt.Printf("connecting to db %s on schema %s...\n", config.AppConfiguration.DbName, config.AppConfiguration.DbSchema)
+	logrus.Infof("connecting to db %s on schema %s...\n", config.AppConfiguration.DbName, config.AppConfiguration.DbSchema)
 
 	dsn := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s sslmode=%s TimeZone=%s", config.AppConfiguration.DbHost, config.AppConfiguration.DbUsername,
 		config.AppConfiguration.DbPassword, config.AppConfiguration.DbName, config.AppConfiguration.DbPort, config.AppConfiguration.DbSslMode, config.AppConfiguration.DbTimezone)
@@ -43,4 +43,6 @@ func ConnectDb() {
 	dbConf.SetMaxOpenConns(config.AppConfiguration.DbMaxConn)
 
 	DB = db
+
+	logrus.Info("connected to database!")
 }
